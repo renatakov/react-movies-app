@@ -1,7 +1,8 @@
+import HomePage from "./components/HomePage/HomePage";
 const App = () => {
   return(
     <>
-    <h1>Movie App</h1>
+    <HomePage/>
     </>
   )
 }
