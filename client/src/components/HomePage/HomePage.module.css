@@ -30,9 +30,19 @@ gap: 3px;
 
 .filterMovies_nowPlaying{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-left: 1.5rem;
 }
 
-.card p{
-    color: #EEEEEE;
+
+.card img{
+    border-radius: 8px;
+    width: 150px;
 }
+
+.card img:hover{
+    filter: opacity(0.2); 
+    
+}
+

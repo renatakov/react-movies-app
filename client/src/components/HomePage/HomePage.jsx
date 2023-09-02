@@ -1,54 +1,51 @@
-import axios from "axios"
-import s from "./HomePage.module.css"
+import axios from "axios";
+import s from "./HomePage.module.css";
 import { useState } from 'react';
 
 const HomePage = () => {
-    const bearerToken = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNzg1MzM1MmQwOTFlMTUzZmIzMGU0ZTE2YzZhNDAwNSIsInN1YiI6IjYwM2QwYTQ0M2UwOWYzMDA1ZmYxYTQ2NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Cjft1BAXMoBhvZ54bC03_LLg_UaTEg0-5eoQMwFGQc8';
+  const api_key = 'f7853352d091e153fb30e4e16c6a4005';
+  const [arr, setArr] = useState([]);
 
-    const [arr, setArr] = useState([]);
-    const [moviesIdArr, setMoviesIdArr] = useState([])
+  const nowPlayingFunc = () => {
+    axios.get("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1", {
+      headers: {
+        accept: 'application/json',
+        Authorization: `Bearer ${api_key}`
+      }
+    })
+    .then(res => {
+      setArr(res.data.results);
+      console.log(arr);
+    })
+    .catch(error => {
+      console.error(error);
+    });
+  }
 
-    const nowPlayingFunc = () => {
-      axios.get("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1", {
-        headers: {
-          'Accept': 'application/json',
-          'Authorization': `Bearer ${bearerToken}`
-        }
-      })
-      .then(res => {
-        setArr(res.data.results);
-        const movieIds = res.data.results.map(item=>item.id)
-        setMoviesIdArr(movieIds)
-      })
-      
-      .catch(error => {
-        console.error(error);
-      });
-    }
-    console.log(moviesIdArr)
+  const nowPlayingMovies = arr.map(item => (
+    <div
+      className={s.card}
+      key={item.id}
+    >
+      <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt=""/>
+    </div>
+  ));
 
-    const movieItems = arr.map(item => (
-      <div className={s.card} key={item.id}>
-        <p>{item.title}</p>
+  return (
+    <section className={s.homepageSection}>
+      <div className={s.homepageSection__filterMovies}>
+        <div className={s.filterMovies_headers}>
+          <button onClick={nowPlayingFunc} className={s.filterMovies_header_nowPlayingBtn}>Now Playing</button>
+          <button className={s.filterMovies_header_upcomingBtn}>Upcoming</button>
+          <button className={s.filterMovies_header_topRatedBtn}>Top Rated</button>
+          <button className={s.filterMovies_header_popularBtn}>Popular</button>
+        </div>
+        <div className={s.filterMovies_nowPlaying}>
+          {nowPlayingMovies}
+        </div>
       </div>
-    ));
-
-
-    return (
-        <section className={s.homepageSection}>
-          <div className={s.homepageSection__filterMovies}>
-            <div className={s.filterMovies_headers}>
-              <button onClick={nowPlayingFunc} className={s.filterMovies_header_nowPlayingBtn}>Now Playing</button>
-              <button className={s.filterMovies_header_upcomingBtn}>Upcoming</button>
-              <button className={s.filterMovies_header_topRatedBtn}>Top Rated</button>
-              <button className={s.filterMovies_header_popularBtn}>Popular</button>
-            </div>
-            <div className={s.filterMovies_nowPlaying}>
-              {movieItems}
-            </div>
-          </div>
-        </section>
-    )
+    </section>
+  )
 }
 
 export default HomePage;
