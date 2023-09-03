@@ -1,0 +1,62 @@
+.introSvg{
+position: absolute;
+top: 10%;
+}
+
+.Vector_2{
+    animation: vector_2 1s linear;
+
+}
+
+@keyframes vector_2{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-10%);
+
+    }
+    100%{
+        transform: translateY(0);
+
+    }
+}
+
+.Vector_5{
+    animation: vector_5 1s linear;
+    z-index: 2;
+    }
+    
+    @keyframes vector_5{
+        0%{
+            transform: translateY(0);
+        }
+        50%{
+            transform: translateY(-10%);
+    
+        }
+        100%{
+            transform: translateY(0);
+    
+        }
+    }
+
+
+.Vector_4{
+animation: vector_4 1s linear;
+
+}
+
+@keyframes vector_4{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-20%);
+
+    }
+    100%{
+        transform: translateY(0);
+
+    }
+}
