@@ -51,8 +51,15 @@ gap: 3px;
     
 }
 
-.card p{
-    visibility: hidden;
-    left: 0;
-    z-index: 0;
+/* .card p{
+    position: relative;
+    top: -50%;
+    left: 20%;
+    color: #fff;
+    font-size: 10px;
+    opacity: 0;
 }
+
+.card:hover  p{
+    opacity: 1;
+} */

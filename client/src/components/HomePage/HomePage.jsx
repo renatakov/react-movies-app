@@ -70,6 +70,7 @@ const HomePage = () => {
       key={item.id}
     >
       <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt=""/>
+    {/* <p>{item.title}</p> */}
       
     </div>
   ));
@@ -78,7 +79,7 @@ const HomePage = () => {
     <div className={s.card}
     key={item.id}>
       <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt=""/>
-
+    {/* <p>{item.title}</p> */}
     </div>
   ))
 
@@ -86,6 +87,7 @@ const HomePage = () => {
     <div className={s.card}
     key={item.id}>
       <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt=""/>
+      {/* <p>{item.title}</p> */}
 
     </div>
   ))
@@ -94,6 +96,7 @@ const HomePage = () => {
     <div className={s.card}
     key={item.id}>
       <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt=""/>
+      {/* <p>{item.title}</p> */}
 
     </div>
   ))
