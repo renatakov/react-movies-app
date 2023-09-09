@@ -9,10 +9,16 @@ body{
     background-color: #242A32
 }
 
-.homepageSection__filterMovies{
-    /* display: flex; */
-    
+.homepageSection__firstHeader{
+    color: #FFF;
+font-family: Poppins;
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+padding-left: 0.2rem;
 }
+
 
 .filterMovies_headers{
 display: flex;
@@ -38,7 +44,10 @@ gap: 3px;
     margin-left: 1.5rem;
 }
 
-
+.card{
+    display: flex;
+    flex-direction: column;
+}
 
 .card img{
     border-radius: 8px;
@@ -51,15 +60,16 @@ gap: 3px;
     
 }
 
-/* .card p{
+.card p{
     position: relative;
     top: -50%;
-    left: 20%;
     color: #fff;
-    font-size: 10px;
+    font-size: 13px;
     opacity: 0;
+    align-self: center;
+    
 }
 
 .card:hover  p{
     opacity: 1;
-} */
+}

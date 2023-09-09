@@ -1,16 +1,15 @@
 import axios from "axios";
 import s from "./HomePage.module.css";
 import { useState } from 'react';
+import Search from "../Search/Search";
 
 const HomePage = () => {
   const api_key = 'f7853352d091e153fb30e4e16c6a4005';
   const [arr, setArr] = useState([]);
-  const [upcomingArr, setUpcomingArr] = useState([])
-  const [topRatedArr, setTopRatedArr] = useState([])
-  const [popularArr, setPopularArr] = useState([])
+  
 
   const nowPlayingFunc = () => {
-    axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${api_key}&language=en-US&region=US`, {
+    axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${api_key}&language=en-US&region=UA`, {
       headers: {
         accept: 'application/json',
         Authorization: `Bearer ${api_key}`
@@ -33,9 +32,9 @@ const HomePage = () => {
       }
     })
     .then(res => {
-      setUpcomingArr(res.data.results);
+      setArr(res.data.results);
       // console.log(res)
-      console.log(upcomingArr);
+      // console.log(upcomingArr);
     })
   }
   const topRatedFunc = () => {
@@ -46,7 +45,7 @@ const HomePage = () => {
       }
     })
     .then(res => {
-      setTopRatedArr(res.data.results);
+      setArr(res.data.results);
 
     })
   }
@@ -59,8 +58,7 @@ const HomePage = () => {
       }
     })
     .then(res => {
-      setPopularArr(res.data.results);
-
+      setArr(res.data.results);
     })
   }
 
@@ -70,39 +68,47 @@ const HomePage = () => {
       key={item.id}
     >
       <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt=""/>
-    {/* <p>{item.title}</p> */}
+      <p>{item.title.length >= 20 ? item.title.slice(0, 20) + "..." : item.title}</p>
+
       
     </div>
   ));
 
-  const upcomingMovies = upcomingArr.map(item => (
+  const upcomingMovies = arr.map(item => (
     <div className={s.card}
     key={item.id}>
       <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt=""/>
-    {/* <p>{item.title}</p> */}
-    </div>
-  ))
+      <p>{item.title.length >= 20 ? item.title.slice(0, 20) + "..." : item.title}</p>
 
-  const topRatedMovies = topRatedArr.map(item => (
-    <div className={s.card}
-    key={item.id}>
-      <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt=""/>
-      {/* <p>{item.title}</p> */}
 
     </div>
   ))
 
-  const popularMovies = popularArr.map(item => (
+  const topRatedMovies = arr.map(item => (
     <div className={s.card}
     key={item.id}>
       <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt=""/>
-      {/* <p>{item.title}</p> */}
+      <p>{item.title.length >= 20 ? item.title.slice(0, 20) + "..." : item.title}</p>
+
+
+
+    </div>
+  ))
+
+  const popularMovies = arr.map(item => (
+    <div className={s.card}
+    key={item.id}>
+      <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt=""/>
+      <p>{item.title.length >= 20 ? item.title.slice(0, 20) + "..." : item.title}</p>
+
 
     </div>
   ))
 
   return (
     <section className={s.homepageSection}>
+      <h1 className={s.homepageSection__firstHeader}>What do you want to watch?</h1>
+      <Search/>
       <div className={s.homepageSection__filterMovies}>
         <div className={s.filterMovies_headers}>
           <button onClick={nowPlayingFunc} className={s.filterMovies_header_nowPlayingBtn}>Now Playing</button>
