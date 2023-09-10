@@ -13,7 +13,6 @@ const App = () => {
     <>
     {loading === true ? <Intro/> : 
     
-    
     <BrowserRouter>
     <Routes>
     <Route path="/search" element={<Search/>}/>
