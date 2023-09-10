@@ -5,9 +5,10 @@ import { useState } from "react"
 import {useForm} from "react-hook-form"
 import axios  from "axios"
 import React from "react"
+import SearchItem from "./SearchItem"
 const Search = () => {
     const [inputSearchData, setInputSearchData] = useState({})
-    const [searchList, setSearchList] = useState(false)
+    const [searchList, setSearchList] = useState([])
     const [searchStatus, setSearchStatus] = useState("init")
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const inputSearchRef = React.createRef(null)
@@ -34,6 +35,17 @@ const Search = () => {
             console.log(error)
         })
     }
+
+    const SearchListCollection = searchList.map((item)=>{
+        return(
+            <SearchItem
+            poster_path={item.poster_path}
+            title={item.title}
+            vote_average={item.vote_average}
+            release_date={item.release_date}
+            />
+        )
+    })
     return(
         <>
         <form onSubmit={handleSubmit(onSubmit)} className={s.searchSection}>
@@ -46,12 +58,13 @@ const Search = () => {
             <img src={searchImg} alt="" />
         </button>
         </form>
-        {searchStatus === "not found" &&
+        {searchStatus === "not found" ?
         <div className={s.notFoundSearch}>
             <img src={notFoundImg} alt="" />
             <p>we are sorry, we can <br/> not find the movie :(</p>
-        </div>
-    }
+        </div> : 
+        SearchListCollection
+        }
         </>
     )
 }

@@ -17,7 +17,7 @@ const HomePage = () => {
     })
     .then(res => {
       setArr(res.data.results);
-      // console.log(arr);
+      console.log(arr);
     })
     .catch(error => {
       console.error(error);
@@ -104,6 +104,8 @@ const HomePage = () => {
 
     </div>
   ))
+
+  
 
   return (
     <section className={s.homepageSection}>

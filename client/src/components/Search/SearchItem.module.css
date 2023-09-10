@@ -1,0 +1,18 @@
+.searchItem{
+    display: flex;
+    color: #fff;
+    /* flex: 0 1 50%; */
+    margin-bottom: 1rem;
+}
+
+.searchItem > img {
+    width: 150px;
+}
+
+.searchItem__info{
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+
+}
+
