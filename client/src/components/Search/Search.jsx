@@ -10,7 +10,7 @@ const Search = () => {
     const [inputSearchData, setInputSearchData] = useState({})
     const [searchList, setSearchList] = useState([])
     const [searchStatus, setSearchStatus] = useState("init")
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit } = useForm();
     const inputSearchRef = React.createRef(null)
     const api_key = 'f7853352d091e153fb30e4e16c6a4005';
     const onSubmit = (data) => {

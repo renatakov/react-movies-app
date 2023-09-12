@@ -68,7 +68,7 @@ const HomePage = () => {
       key={item.id}
     >
       <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt=""/>
-      <p>{item.title.length >= 20 ? item.title.slice(0, 20) + "..." : item.title}</p>
+      <p>{item.title.length >= 18 ? item.title.slice(0, 18) + "..." : item.title}</p>
 
       
     </div>
@@ -78,7 +78,7 @@ const HomePage = () => {
     <div className={s.card}
     key={item.id}>
       <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt=""/>
-      <p>{item.title.length >= 20 ? item.title.slice(0, 20) + "..." : item.title}</p>
+      <p>{item.title.length >= 18 ? item.title.slice(0, 18) + "..." : item.title}</p>
 
 
     </div>
@@ -88,7 +88,7 @@ const HomePage = () => {
     <div className={s.card}
     key={item.id}>
       <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt=""/>
-      <p>{item.title.length >= 20 ? item.title.slice(0, 20) + "..." : item.title}</p>
+      <p>{item.title.length >= 18 ? item.title.slice(0, 18) + "..." : item.title}</p>
 
 
 
@@ -99,7 +99,7 @@ const HomePage = () => {
     <div className={s.card}
     key={item.id}>
       <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt=""/>
-      <p>{item.title.length >= 20 ? item.title.slice(0, 20) + "..." : item.title}</p>
+      <p>{item.title.length >= 18 ? item.title.slice(0, 18) + "..." : item.title}</p>
 
 
     </div>
@@ -110,7 +110,6 @@ const HomePage = () => {
   return (
     <section className={s.homepageSection}>
       <h1 className={s.homepageSection__firstHeader}>What do you want to watch?</h1>
-      <Search/>
       <div className={s.homepageSection__filterMovies}>
         <div className={s.filterMovies_headers}>
           <button onClick={nowPlayingFunc} className={s.filterMovies_header_nowPlayingBtn}>Now Playing</button>
