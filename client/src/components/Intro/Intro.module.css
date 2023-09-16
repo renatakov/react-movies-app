@@ -1,6 +1,7 @@
 .introSvg{
-position: absolute;
-top: 10%;
+    display: block;
+    position: absolute;
+    top: 10%;
 }
 
 .popcornSvg{
@@ -83,3 +84,8 @@ animation: vector_4 1.2s infinite;
     }
 }
 
+@media (min-width: 768px) {
+    .introSvg{
+        margin: 0 auto;
+    }
+}

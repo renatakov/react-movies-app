@@ -3,6 +3,8 @@ import HomePage from "./components/HomePage/HomePage";
 import Intro from "./components/Intro/Intro";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Search from "./components/Search/Search";
+import s from "./App.module.css"
+
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -26,7 +28,11 @@ const App = () => {
           {/* Показываем интро только на домашней странице */}
           <Route
             path="/"
-            element={loading ? <Intro /> : <HomePage />}
+            element={loading ?
+              <div className={s.introContainer}>
+                <Intro />
+              </div>
+            : <HomePage />}
           />
           {/* Другие маршруты */}
           <Route path="/search" element={<Search />} />
