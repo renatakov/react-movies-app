@@ -1,7 +1,6 @@
 import axios from "axios";
 import s from "./HomePage.module.css";
 import { useState } from 'react';
-import Search from "../Search/Search";
 
 const HomePage = () => {
   const api_key = 'f7853352d091e153fb30e4e16c6a4005';

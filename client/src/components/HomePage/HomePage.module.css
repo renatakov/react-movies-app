@@ -9,6 +9,19 @@ body{
     background-color: #242A32
 }
 
+html::-webkit-scrollbar {
+    width: 20px;
+}
+
+html::-webkit-scrollbar-track {
+    background-color: #1d0808;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: rgb(157, 15, 15);
+    border-radius: 8px;
+    box-shadow: inset 0px 0px 2px 4px #1d0808;
+}
 
 .homepageSection__firstHeader{
     color: #FFF;
@@ -57,7 +70,7 @@ justify-content: center;
 }
 
 .card img:hover{
-    filter: opacity(0.25); 
+    filter: opacity(0.125); 
     
 }
 
@@ -81,10 +94,6 @@ justify-content: center;
 
         margin-left: 2.6rem;
     }
-    .filterMovies_headers{
-        display: flex;
-        gap: 3px;
-        }
     .filterMovies_headers button{
         font-size: 18px;
     }
@@ -104,4 +113,12 @@ justify-content: center;
     .homepageSection__firstHeader{
         margin-left: 8.5rem;
     }
+
+    .filterMovies_nowPlaying,
+    .filterMovies_upcoming,
+    .filterMovies_topRated,
+    .filterMovies_popular{
+        padding: 1rem 18%;
+    }
+    
 }
