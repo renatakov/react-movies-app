@@ -1,0 +1,39 @@
+.slider {
+    padding: 20px;
+    background: #242A32;
+}
+
+.slider_container {
+    padding-left: 9%;
+    
+}
+
+.slider_container_card{
+    /* padding-top: 40px; */
+
+}
+
+.slider_card {
+    z-index: 9;
+    padding: 10px;
+    position: relative;
+}
+
+.slider_container_card p {
+    -webkit-text-stroke: 0.5px #0296E5;
+    position: absolute;
+    color: #242A32;
+    font-size: 96px;
+    width: 600px;
+    bottom: -16%;
+    z-index: 10;
+    padding: 0;
+    left: -3%;
+    margin: 0;
+}
+
+.slider img {
+    width: 145px;
+    height: 210px;
+    border-radius: 16px;
+}

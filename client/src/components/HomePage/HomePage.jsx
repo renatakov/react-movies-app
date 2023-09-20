@@ -1,6 +1,7 @@
 import axios from "axios";
 import s from "./HomePage.module.css";
 import { useState } from 'react';
+import Slider from "../Slider/Slider"
 
 const HomePage = () => {
   const api_key = 'f7853352d091e153fb30e4e16c6a4005';
@@ -109,6 +110,7 @@ const HomePage = () => {
   return (
     <section className={s.homepageSection}>
       <h1 className={s.homepageSection__firstHeader}>What do you want to watch?</h1>
+      <Slider/>
       <div className={s.homepageSection__filterMovies}>
         <div className={s.filterMovies_headers}>
           <button onClick={nowPlayingFunc} className={s.filterMovies_header_nowPlayingBtn}>Now Playing</button>
