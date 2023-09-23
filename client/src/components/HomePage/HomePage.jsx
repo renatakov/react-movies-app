@@ -2,10 +2,14 @@ import axios from "axios";
 import s from "./HomePage.module.css";
 import { useState } from 'react';
 import Slider from "../Slider/Slider"
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
   const api_key = 'f7853352d091e153fb30e4e16c6a4005';
   const [arr, setArr] = useState([]);
+  const [detailsId, setDetailsId] = useState(null)
+  const navigate = useNavigate();
   
 
   const nowPlayingFunc = () => {
@@ -62,13 +66,24 @@ const HomePage = () => {
     })
   }
 
+  const detailsIdFunc = (id) =>{
+    localStorage.setItem("detailsId", id)
+    navigate("/details");
+  }
+
+
+
   const nowPlayingMovies = arr.map(item => (
     <div
+
       className={s.card}
       key={item.id}
     >
       <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt=""/>
-      <p>{item.title.length >= 18 ? item.title.slice(0, 18) + "..." : item.title}</p>
+      <button className={s.cardLink} onClick={()=>{detailsIdFunc(item.id)}}>
+
+      {item.title.length >= 18 ? item.title.slice(0, 18) + "..." : item.title}
+      </button>
 
       
     </div>
@@ -78,8 +93,10 @@ const HomePage = () => {
     <div className={s.card}
     key={item.id}>
       <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt=""/>
-      <p>{item.title.length >= 18 ? item.title.slice(0, 18) + "..." : item.title}</p>
+      <button className={s.cardLink} onClick={()=>{detailsIdFunc(item.id)}}>
 
+      {item.title.length >= 18 ? item.title.slice(0, 18) + "..." : item.title}
+      </button>
 
     </div>
   ))
@@ -88,10 +105,10 @@ const HomePage = () => {
     <div className={s.card}
     key={item.id}>
       <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt=""/>
-      <p>{item.title.length >= 18 ? item.title.slice(0, 18) + "..." : item.title}</p>
+      <button className={s.cardLink} onClick={()=>{detailsIdFunc(item.id)}}>
 
-
-
+      {item.title.length >= 18 ? item.title.slice(0, 18) + "..." : item.title}
+      </button>
     </div>
   ))
 
@@ -99,9 +116,10 @@ const HomePage = () => {
     <div className={s.card}
     key={item.id}>
       <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt=""/>
-      <p>{item.title.length >= 18 ? item.title.slice(0, 18) + "..." : item.title}</p>
+      <button className={s.cardLink} onClick={()=>{detailsIdFunc(item.id)}}>
 
-
+      {item.title.length >= 18 ? item.title.slice(0, 18) + "..." : item.title}
+      </button>
     </div>
   ))
 

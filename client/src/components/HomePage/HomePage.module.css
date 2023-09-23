@@ -74,17 +74,21 @@ justify-content: center;
     
 }
 
-.card p{
+.cardLink{
     position: relative;
     top: -50%;
     color: #fff;
     font-size: 13px;
     opacity: 0;
+    z-index: 2;
+    background: none;
+    border: none;
     align-self: center;
+    text-decoration: none;
     
 }
 
-.card:hover  p{
+.card:hover  .cardLink{
     opacity: 1;
 }
 

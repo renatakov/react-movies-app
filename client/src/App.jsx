@@ -3,6 +3,7 @@ import HomePage from "./components/HomePage/HomePage";
 import Intro from "./components/Intro/Intro";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Search from "./components/Search/Search";
+import Details from "./components/Details/Details";
 import s from "./App.module.css"
 
 
@@ -10,13 +11,11 @@ const App = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Задержка перед скрытием интро
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2000);
 
     return () => {
-      // Очистите таймер, чтобы избежать утечки памяти
       clearTimeout(timer);
     };
   }, []);
@@ -25,7 +24,6 @@ const App = () => {
     <>
       <BrowserRouter>
         <Routes>
-          {/* Показываем интро только на домашней странице */}
           <Route
             path="/"
             element={loading ?
@@ -34,8 +32,9 @@ const App = () => {
               </div>
             : <HomePage />}
           />
-          {/* Другие маршруты */}
+
           <Route path="/search" element={<Search />} />
+          <Route path="/details" element={<Details/>}/>
         </Routes>
       </BrowserRouter>
     </>

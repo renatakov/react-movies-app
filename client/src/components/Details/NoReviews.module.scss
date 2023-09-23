@@ -1,0 +1,17 @@
+.noReviews {
+    justify-content: center;
+    flex-direction: column;
+    background: #242a32;
+    display: flex;
+    width: 100%;
+
+    &_img {
+        width: 76px;
+        height: 76px;
+    }
+
+    &_text {
+        font-size: 16px;
+        font-weight: 600;
+    }
+}
