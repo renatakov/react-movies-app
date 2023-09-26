@@ -2,7 +2,6 @@ import axios from "axios";
 import s from "./HomePage.module.css";
 import { useState } from 'react';
 import Slider from "../Slider/Slider"
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
