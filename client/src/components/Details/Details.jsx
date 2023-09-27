@@ -1,5 +1,5 @@
 import Header from '../../assets/Header/Header'
-import save from "../../images/save.svg"
+import save from "../../images/save-bg.svg"
 import genresImg from '../../images/Ticket.svg'
 import year from '../../images/Calendar.svg'
 import time from '../../images/Clock.svg'

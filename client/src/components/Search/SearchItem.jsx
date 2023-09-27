@@ -16,7 +16,7 @@ return(
         <div className={s.searchItem__info}>
         <button className={s.searchItem_link} onClick={()=>{detailsIdFunc(props.id)}}>
 
-      {props.title.length >= 18 ? props.title.slice(0, 18) + "..." : props.title}
+      {props.title.length >= 16 ? props.title.slice(0, 16) + "..." : props.title}
       </button>
 
         <span className={s.release_span}>

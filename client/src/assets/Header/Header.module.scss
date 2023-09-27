@@ -10,11 +10,20 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-around;
-
+        &_text{
+    color: #ECECEC;
+    text-decoration: none;
+        }
         &_btn {
             border: none;
             background: transparent;
-            
+            img{
+                width: 20px;
+
+            }
         }
     }
+    
 }
+
+
