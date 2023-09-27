@@ -1,4 +1,6 @@
 import s from "./Search.module.css"
+import Header from '../../assets/Header/Header'
+import info from "../../images/info-circle.svg"
 import searchImg from "../../images/Search.svg"
 import notFoundImg from "../../images/no-results 1.png"
 import { useState } from "react"
@@ -39,6 +41,7 @@ const Search = () => {
     const SearchListCollection = searchList.map((item)=>{
         return(
             <SearchItem
+            id={item.id}
             poster_path={item.poster_path}
             title={item.title}
             vote_average={item.vote_average}
@@ -48,6 +51,8 @@ const Search = () => {
     })
     return(
         <>
+    <Header title="Search" img={info}/>
+
         <form onSubmit={handleSubmit(onSubmit)} className={s.searchSection}>
         <input
         ref={inputSearchRef}

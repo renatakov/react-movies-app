@@ -1,12 +1,28 @@
 .searchItem{
     display: flex;
     color: #fff;
-    /* flex: 0 1 50%; */
+    margin-top: 2%;
+    justify-content: center;
     margin-bottom: 1rem;
 }
 
 .searchItem > img {
     width: 150px;
+}
+
+.rating_span{
+    width: 25px;
+    display: flex;
+    justify-content: space-between;
+    color: #FF8700;
+}
+
+.release_span{
+    display: flex;
+    width: 50px;
+    justify-content: center;
+    column-gap: 1px;
+
 }
 
 .searchItem__info{
@@ -16,3 +32,19 @@
 
 }
 
+.searchItem_link{
+    color: #fff;
+    padding: 0;
+    font-size: 16px;
+    background: none;
+    border: none;
+    text-decoration: none;
+    
+}
+
+@media (min-width: 768px) {
+    .searchItem{
+        justify-content: start;
+        margin-left: 5%;
+    }
+}

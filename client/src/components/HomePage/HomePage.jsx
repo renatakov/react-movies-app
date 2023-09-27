@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 const HomePage = () => {
   const api_key = 'f7853352d091e153fb30e4e16c6a4005';
   const [arr, setArr] = useState([]);
-  const [detailsId, setDetailsId] = useState(null)
+  // const [detailsId, setDetailsId] = useState(null)
   const navigate = useNavigate();
   
 

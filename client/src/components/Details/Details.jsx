@@ -1,4 +1,5 @@
-// import NoReviews from './NoReviews'
+import Header from '../../assets/Header/Header'
+import save from "../../images/save.svg"
 import genresImg from '../../images/Ticket.svg'
 import year from '../../images/Calendar.svg'
 import time from '../../images/Clock.svg'
@@ -158,7 +159,7 @@ const Details = (props) => {
     </div>
   ) : null;
 
-  console.log(Review)
+  // console.log(Review)
   
   const Cast = arr2 && arr2.cast && showCast ? (
     <div className={s.details_cast}>
@@ -175,6 +176,8 @@ const Details = (props) => {
 
 
   return (
+    <>
+    <Header title="Details" img={save}/>
     <section className={s.details}>
       {Poster}
       <div className={s.details_container}>
@@ -208,6 +211,7 @@ const Details = (props) => {
         {Cast}
       </div>
     </section>
+    </>
   );
 }
 
