@@ -4,8 +4,8 @@ import Intro from "./components/Intro/Intro";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Search from "./components/Search/Search";
 import Details from "./components/Details/Details";
-import s from "./App.module.css"
-
+import Navigation from "./components/navigation/Navigation";
+import s from "./App.module.css";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -26,16 +26,23 @@ const App = () => {
         <Routes>
           <Route
             path="/"
-            element={loading ?
-              <div className={s.introContainer}>
-                <Intro />
-              </div>
-            : <HomePage />}
+            element={
+              loading ? (
+                <div className={s.introContainer}>
+                  <Intro />
+                </div>
+              ) : (
+                <HomePage />
+              )
+            }
           />
 
           <Route path="/search" element={<Search />} />
-          <Route path="/details" element={<Details/>}/>
+          <Route path="/details" element={<Details />} />
         </Routes>
+
+        {/* Показываем Navigation только если loading стал false */}
+        {!loading && <Navigation />}
       </BrowserRouter>
     </>
   );

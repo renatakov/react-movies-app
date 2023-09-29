@@ -53,8 +53,9 @@ justify-content: center;
 .filterMovies_popular{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 10px;
-    margin-left: 1.5rem;
+    margin-left: 0rem;
 }
 
 .card{
