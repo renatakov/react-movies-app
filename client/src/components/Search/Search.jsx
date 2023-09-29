@@ -19,24 +19,27 @@ const Search = () => {
         setInputSearchData(data);
         console.log(inputSearchData)
     }
-    const searchMovie = () => {
-        axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${inputSearchData.search}&include_adult=false&language=en-US&page=1`, {
-            headers: {
+    async function searchMovie(){
+            await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${inputSearchData.search}&include_adult=false&language=en-US&page=1`, {
+                headers: {
                 accept: 'application/json',
                 Authorization: `Bearer ${api_key}`
             }
         })
         .then((res)=>{
-            setSearchList(res.data.results)
-            if(res.data.results.length === 0) {
-                setSearchStatus("not found")
+            if(inputSearchData.search !== undefined){
+                setSearchList(res.data.results)
             }
-            console.log(searchList)
-        })
-        .catch((error)=>{
-            console.log(error)
-        })
-    }
+                if(res.data.results.length === 0) {
+                    setSearchStatus("not found")
+                }
+                console.log(searchList)
+            })
+            .catch((error)=>{
+                console.log(error)
+            })
+    
+}
 
     const SearchListCollection = searchList.map((item)=>{
         return(
