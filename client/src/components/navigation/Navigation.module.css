@@ -23,6 +23,10 @@
  background-color: #242A32;
 }
 
+.nav-details{
+    position: static;
+}
+
 body {
     margin: 0;
 }

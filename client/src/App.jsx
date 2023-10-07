@@ -40,8 +40,6 @@ const App = () => {
           <Route path="/search" element={<Search />} />
           <Route path="/details" element={<Details />} />
         </Routes>
-
-        {/* Показываем Navigation только если loading стал false */}
         {!loading && <Navigation />}
       </BrowserRouter>
     </>

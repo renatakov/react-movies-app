@@ -1,11 +1,21 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import s from "./Navigation.module.css";
+import React, { useEffect } from "react";
+
 
 
 const Navigation = () => {
+    const refNav = React.createRef()
+    const location = useLocation()
+    console.log(location.pathname)
+    useEffect(()=>{
+        if(location.pathname === "/details"){
+            refNav.current.style.position = "static"
+        }
+    }, [])
     return (
         
-        <nav className={s.nav}>
+        <nav ref={refNav} className={s.nav}>
             <hr className={s.hr} />
         <div className={s.items}>
             <div className={s.home_div}>
