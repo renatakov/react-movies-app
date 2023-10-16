@@ -7,7 +7,7 @@ const initialState = {
             id: 1,
             login: 'admin',
             password: 'admin',
-            wachlist:[],
+            watchlist:[1],
             auth_key: '123greg'
         },
     ]
@@ -16,6 +16,13 @@ const initialState = {
 
 export const AddUser = createAction('users/addProduct', (newUser) => ({
     payload: {...newUser}
+}))
+
+export const AddToWatchlist = createAction('users/addToBasket', (userId, movieId)=>({
+    payload:{
+        userId,
+        movieId
+    }
 }))
 
 
@@ -38,6 +45,18 @@ const reducer = createReducer(initialState, (builder) => {
         ]
         localStorage.setItem('auth_key', newUser.auth_key)
         localStorage.setItem("id_user", newUser.id)
+    })
+    builder.addCase(AddToWatchlist, (state, action)=>{
+
+        state.users = state.users.map((item)=>{
+            if(item.id === action.idUser){
+                item.watchlist = [
+                    ...item.watchlist,
+                    action.movieId
+                ]
+            }
+            return item
+        })
     })
 })
 
