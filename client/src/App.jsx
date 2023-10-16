@@ -6,6 +6,8 @@ import Search from "./components/Search/Search";
 import Details from "./components/Details/Details";
 import Navigation from "./components/navigation/Navigation";
 import s from "./App.module.css";
+import SignIn from "./components/Auth/SingIn/SignIn";
+import SignUp from "./components/Auth/SignUp/SignUp";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -39,6 +41,8 @@ const App = () => {
 
           <Route path="/search" element={<Search />} />
           <Route path="/details" element={<Details />} />
+          <Route path = "/signin" element = {<SignIn/>}/>
+          <Route path = "/signup" element = {<SignUp/>}/>
         </Routes>
         {!loading && <Navigation />}
       </BrowserRouter>
