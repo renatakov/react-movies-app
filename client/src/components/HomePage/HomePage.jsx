@@ -2,6 +2,7 @@ import axios from "axios";
 import s from "./HomePage.module.css";
 import { useState } from 'react';
 import Slider from "../Slider/Slider"
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
@@ -126,6 +127,11 @@ const HomePage = () => {
 
   return (
     <section className={s.homepageSection}>
+      <div className={s.sign}>
+      <Link to='/signin' className={s.signin}>Sign In</Link>
+      <Link to='/signup' className={s.signup}>Sign Up</Link>
+      </div>
+
       <h1 className={s.homepageSection__firstHeader}>What do you want to watch?</h1>
       <Slider/>
       <div className={s.homepageSection__filterMovies}>

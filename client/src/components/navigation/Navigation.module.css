@@ -14,7 +14,7 @@
 }
 
 .nav {
- height: 6%;
+ height: 9%;
  width: 100%;
  position: fixed;
  bottom: 0;
@@ -47,7 +47,8 @@ body {
 }
 
 .watch_div, .Search_div, .home_div {
-    flex: 0 1 20%;
+    /* flex: 0 1 10%; */
+    padding: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;

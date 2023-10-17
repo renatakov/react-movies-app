@@ -53,9 +53,8 @@ justify-content: center;
 .filterMovies_popular{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 10px;
-    margin-left: 0rem;
+    margin-left: 2rem;
 }
 
 .card{
@@ -126,4 +125,54 @@ justify-content: center;
         padding: 1rem 18%;
     }
     
+}
+
+.sign{
+    position: absolute;
+    width: 40%;
+    display: inline-flex;
+    margin-left: 60%;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.signin {
+    width: 20%;
+    flex-wrap: nowrap;
+    margin-right: 4%;
+    border: none;
+    border-radius: 20px;
+    background: #32435b;
+    font-size: 24px;
+    padding: 15px 0 15px 8%;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 110%;
+    text-decoration: none;
+    color: #fff;
+}
+
+.signup {
+    width: 20%;
+    flex-wrap: nowrap;
+    text-decoration: none;
+    border: none;
+    border-radius: 20px;
+    background: #1d2f49;
+    font-size: 24px;
+    padding: 15px 0 15px 6%;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 110%;
+    color: #fff;
+}
+
+@media (min-width: 768px) {
+    .signin,.signup{
+        font-size: 16px;
+        padding: 15px;
+        text-align: center;
+        
+    }
 }
