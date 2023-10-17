@@ -7,7 +7,7 @@ const initialState = {
             id: 1,
             login: 'admin',
             password: 'admin',
-            watchlist:[1],
+            watchlist:[],
             auth_key: '123greg'
         },
     ]
@@ -18,10 +18,14 @@ export const AddUser = createAction('users/addProduct', (newUser) => ({
     payload: {...newUser}
 }))
 
-export const AddToWatchlist = createAction('users/addToBasket', (userId, movieId)=>({
+export const AddToWatchlist = createAction('users/addToBasket', (userId, movieId, title, date, img, duration)=>({
     payload:{
         userId,
-        movieId
+        movieId,
+        title,
+        date,
+        img,
+        duration
     }
 }))
 
@@ -47,12 +51,20 @@ const reducer = createReducer(initialState, (builder) => {
         localStorage.setItem("id_user", newUser.id)
     })
     builder.addCase(AddToWatchlist, (state, action)=>{
-
+        const newWatchlistCandidate = {
+            id: action.payload.movieId,
+            title: action.payload.title,
+            date: action.payload.date,
+            img: action.payload.img,
+            duration: action.payload.duration
+        }
         state.users = state.users.map((item)=>{
-            if(item.id === action.idUser){
+            if(item.id === action.payload.userId){
                 item.watchlist = [
                     ...item.watchlist,
-                    action.movieId
+                    {
+                        ...newWatchlistCandidate
+                    }
                 ]
             }
             return item

@@ -7,6 +7,7 @@ import s from "./Details.module.scss"
 import { useSelector } from 'react-redux'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { AddToWatchlist } from "../../redux/users"
 
 
 const Details = (props) => {
@@ -14,7 +15,12 @@ const Details = (props) => {
   const [arr3, setArr3] = useState(null);
   const [arr2, setCast] = useState(null);
   const [reviewsData, setReviewsData] = useState(null);
-  
+  const [movieTitle, setMovieTitle] = useState(null)
+  const [movieImg, setMovieImg] = useState(null)
+  const [moviDate, setMovieDate] = useState(null)
+  const [movieDuration, setMovieDuration] = useState(null)
+  const [movieId, setMovieId] = useState(null)
+
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [showAbout, setShowAbout] = useState(false);
   const [showReviews, setShowReviews] = useState(false);
@@ -39,11 +45,17 @@ const Details = (props) => {
       .get(`https://api.themoviedb.org/3/movie/${localStorage.getItem("detailsId")}?api_key=${api_key}&language=en-US`)
       .then((res) => {
         setArr3(res.data);
+        setMovieTitle(res.data.title)
+        setMovieDate(res.data.release_date)
+        setMovieDuration(res.data.runtime)
+        setMovieImg(res.data.poster_path)
+        setMovieId(res.data.id)
       })
       .catch((error) => {
         console.error(error);
       });
   };
+
 
   const ReviewF = () => {
     axios
@@ -60,8 +72,8 @@ const Details = (props) => {
   // if (!reviewsAvailable && showReviews) {
   //   return <NoReviews />;
   // }
-  
-  
+  console.log(movieTitle)
+  // console.log(arr3)
 
   const CastF = () => {
     axios
@@ -177,7 +189,15 @@ const Details = (props) => {
 
   return (
     <>
-    <Header title="Details" img={save}/>
+    <Header 
+    title="Details"
+    img={save}
+    movieId={movieId}
+    movieTitle={movieTitle}
+    movieDate={moviDate}
+    movieImg={movieImg}
+    movieDuration={movieDuration}
+    />
     <section className={s.details}>
       {Poster}
       <div className={s.details_container}>
