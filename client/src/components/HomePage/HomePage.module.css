@@ -176,3 +176,21 @@ justify-content: center;
         
     }
 }
+
+@media (min-width: 320px) and (max-width: 450px) {
+    .sign{
+        position: relative;
+        display: flex;
+        padding-top: 10px;
+        margin-left: 50%;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+    }
+    .signin,.signup{
+        font-size: 14px;
+        padding: 3px 30px;
+        text-align: center;
+        
+    }
+}
