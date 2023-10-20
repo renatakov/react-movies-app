@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/react-movies-app/static/css/main.43623c70.css",
+    "main.js": "/react-movies-app/static/js/main.1a832c9a.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/react-movies-app/static/js/787.c4e7f8f9.chunk.js",
+    "static/media/revicons.eot": "/react-movies-app/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/react-movies-app/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/revicons.woff": "/react-movies-app/static/media/revicons.e8746a624ed098489406.woff",
+    "static/media/info-circle.svg": "/react-movies-app/static/media/info-circle.f035a6aa5edf186dfb16f24edd2644fd.svg",
+    "static/media/Ticket.svg": "/react-movies-app/static/media/Ticket.53d8da95da1d28feaba64f8503a50646.svg",
+    "static/media/star.svg": "/react-movies-app/static/media/star.bc3b53dd815ccebcb16f39b9344601a7.svg",
+    "static/media/save-bg.svg": "/react-movies-app/static/media/save-bg.54979a0309c91a28df01faf53c6902da.svg",
+    "static/media/Calendar.svg": "/react-movies-app/static/media/Calendar.2ed45fb5e8703e8743543ded90425e93.svg",
+    "index.html": "/react-movies-app/index.html",
+    "static/media/Search.svg": "/react-movies-app/static/media/Search.dc49cd586cc9b27a127164b27185489a.svg",
+    "static/media/Clock.svg": "/react-movies-app/static/media/Clock.00cdd501a4633d9a2bf1e09b5f0b5a9d.svg",
+    "main.43623c70.css.map": "/react-movies-app/static/css/main.43623c70.css.map",
+    "main.1a832c9a.js.map": "/react-movies-app/static/js/main.1a832c9a.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/react-movies-app/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.43623c70.css",
+    "static/js/main.1a832c9a.js"
+  ]
+}
