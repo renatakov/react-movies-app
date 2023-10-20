@@ -25,7 +25,7 @@ const App = () => {
 
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/react-movies-app">
         <Routes>
           <Route
             path="/"
