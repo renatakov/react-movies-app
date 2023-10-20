@@ -33,7 +33,7 @@ const Watchlist = () => {
     return (
         <>
             <Header 
-    title="Details"
+    title="Watchlist"
     />
         {watchListItem()}
         </>
