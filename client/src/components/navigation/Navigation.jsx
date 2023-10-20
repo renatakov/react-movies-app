@@ -9,7 +9,7 @@ const Navigation = () => {
     const location = useLocation()
     console.log(location.pathname)
     useEffect(()=>{
-        if(location.pathname === "/details"){
+        if(location.pathname !== "/"){
             refNav.current.style.position = "static"
         }
     }, [])
