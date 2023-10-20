@@ -10,7 +10,7 @@ flex-flow: column wrap;
     color: #FFFFFF;
 }
 
-p {
+.auth > p {
     line-height: normal;
     font-style: normal;
     font-size: 24px;
