@@ -1,6 +1,6 @@
 {
   "name": "client",
-  "homepage": "http://renatakov1010.github.io/react-movies-app",
+  "homepage": "http://renatakov.github.io/react-movies-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
