@@ -14,13 +14,13 @@
 }
 
 .nav {
- height: 9%;
- width: 100%;
- position: fixed;
- bottom: 0;
- padding-bottom: 3%;
- z-index: 999;
- background-color: #242A32;
+    height: 9%;
+    width: 100%;
+    position: sticky;
+    bottom: 0;
+    padding-bottom: 3%;
+    z-index: 999;
+    background-color: #242A32;
 }
 
 .nav-details{

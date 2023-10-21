@@ -8,11 +8,11 @@ const Navigation = () => {
     const refNav = React.createRef()
     const location = useLocation()
     console.log(location.pathname)
-    useEffect(()=>{
-        if(location.pathname !== "/"){
-            refNav.current.style.position = "static"
-        }
-    }, [])
+    // useEffect(()=>{
+    //     if(location.pathname !== "/"){
+    //         refNav.current.style.position = "static"
+    //     }
+    // }, [])
     return (
         
         <nav ref={refNav} className={s.nav}>
