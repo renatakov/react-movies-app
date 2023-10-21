@@ -27,24 +27,27 @@ const App = () => {
     <>
       <BrowserRouter basename="/react-movies-app">
         <Routes>
-          <Route
-            path="/"
-            element={
-              loading ? (
-                <div className={s.introContainer}>
-                  <Intro />
-                </div>
-              ) : (
-                <HomePage />
-              )
-            }
-          />
+          <Route path="/">
+            <Route
+              path="/"
+              index
+              element={
+                loading ? (
+                  <div className={s.introContainer}>
+                    <Intro />
+                  </div>
+                ) : (
+                  <HomePage />
+                )
+              }
+            />
 
-          <Route path="/search" element={<Search />} />
-          <Route path="/details" element={<Details />} />
-          <Route path = "/signin" element = {<SignIn/>}/>
-          <Route path = "/signup" element = {<SignUp/>}/>
-          <Route path="/list" element={<Watchlist/>}/>
+            <Route path="/search" element={<Search />} />
+            <Route path="/details" element={<Details />} />
+            <Route path = "/signin" element = {<SignIn/>}/>
+            <Route path = "/signup" element = {<SignUp/>}/>
+            <Route path="/list" element={<Watchlist/>}/>
+          </Route>
         </Routes>
         {!loading && <Navigation />}
       </BrowserRouter>
