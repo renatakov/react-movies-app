@@ -1,6 +1,6 @@
 import axios from "axios";
 import s from "./HomePage.module.css";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Slider from "../Slider/Slider"
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -27,6 +27,11 @@ const HomePage = () => {
       console.error(error);
     });
   }
+
+  useEffect(()=>{
+    setTimeout(nowPlayingFunc(),1000)
+  }, [])
+
 
   const upcomingFunc = () => {
     axios.get(`https://api.themoviedb.org/3/movie/upcoming?api_key=${api_key}&language=en-US&page=1`, {
