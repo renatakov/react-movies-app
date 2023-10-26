@@ -3,6 +3,7 @@
 .auth {
 display: flex;
 flex-flow: column wrap;
+margin-bottom: 20px;
 }
 
 .auth_title {
